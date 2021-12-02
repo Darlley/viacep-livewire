@@ -31,5 +31,6 @@
         @yield('body')
 
         @livewireScripts
+        <script src="{{ asset('js/requests.js') }}"></script>
     </body>
 </html>
