@@ -25,4 +25,11 @@ class ViacepServiceTest extends TestCase
         $response = Http::get("viacep.com.br/ws/{$cep}/json/");
         $this->assertTrue(Arr::accessible($response->json()));
     }
+    public function test_if_viacep_service_is_working()
+    {
+        $cep = '79036030';
+        $service = new ViacepService($cep);
+        $location = $service->getLocation();
+        $this->assertSame($same, $location['cep']);
+    }
 }
